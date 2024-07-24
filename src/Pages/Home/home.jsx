@@ -1,5 +1,16 @@
+import { useState, useEffect } from 'react'
+import Banner from '../../Components/Banner/banner'
+import Card from '../../Components/Card/card'
+
 function Home() {
-  return <p>Hello</p>
+  // const [data, setData] = useState([])
+
+  return (
+    <div>
+      <Banner />
+      <Card />
+    </div>
+  )
 }
 
 export default Home
