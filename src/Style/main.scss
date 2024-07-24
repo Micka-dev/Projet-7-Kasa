@@ -1,0 +1,41 @@
+/* general */
+
+/* imported fonts (google fonts) */
+
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900
+
+.montserrat {
+  font-family: 'Montserrat', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+.montserrat {
+  font-family: 'Montserrat', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.main-container {
+  margin-right: 20px;
+  margin-left: 20px;
+
+  @media (min-width: 768px) {
+    margin-right: 100px;
+    margin-left: 100px;
+  }
+}

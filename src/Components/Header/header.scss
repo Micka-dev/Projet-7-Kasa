@@ -1,0 +1,39 @@
+@import '../../Style/main.scss';
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  @media (min-width: 768px) {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  &_logo {
+    height: 45px;
+
+    @media (min-width: 768px) {
+      height: 70px;
+    }
+  }
+
+  &_nav {
+    display: flex;
+    gap: 25px;
+    font-size: 12px;
+    text-transform: uppercase;
+
+    @media (min-width: 768px) {
+      gap: 55px;
+      font-size: 24px;
+      text-transform: none;
+    }
+  }
+
+  &_link-activated {
+    text-decoration: underline;
+  }
+}
