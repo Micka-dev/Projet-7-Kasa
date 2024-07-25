@@ -1,0 +1,30 @@
+.collapse-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  color: #ffffff;
+  background-color: #ff6060;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 700;
+
+  @media (min-width: 768px) {
+    padding: 15px;
+    font-size: 24px;
+  }
+
+  &_icon {
+    cursor: pointer;
+  }
+
+  &_content {
+    border-radius: 0 0 5px 5px;
+    background-color: #f6f6f673;
+    color: #000000;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: -2px;
+  }
+}

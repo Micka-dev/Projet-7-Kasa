@@ -16,12 +16,14 @@ import Footer from './Components/Footer/footer.jsx'
 // import './Pages/Home/home.scss'
 import './Pages/Home/home.scss'
 import './Pages/Error404/error404.scss'
+import './Pages/About/about.scss'
 
 // Liens styles des composants standard (fichier scss)
 import './Components/Header/header.scss'
 import './Components/Footer/footer.scss'
 import './Components/Card/card.scss'
 import './Components/Banner/banner.scss'
+import './Components/Collapse/collapse.scss'
 
 function Router() {
   return (

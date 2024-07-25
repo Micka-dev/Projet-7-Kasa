@@ -25,6 +25,5 @@ function Home() {
     </div>
   )
 }
-console.log(Housings.id)
 
 export default Home
