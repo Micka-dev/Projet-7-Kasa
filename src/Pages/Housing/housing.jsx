@@ -7,13 +7,13 @@ function Housing() {
   const listId = Housings.map((housing) => housing.id)
   console.log(listId)
 
-  const { bookingId } = useParams()
-  console.log(bookingId)
+  const { housingId } = useParams()
+  console.log(housingId)
 
-  if (!listId.includes(bookingId)) {
+  if (!listId.includes(housingId)) {
     return <Error404 />
   } else {
-    return <p>Fiche logement {bookingId} </p>
+    return <p>Fiche logement {housingId} </p>
   }
 }
 

@@ -14,6 +14,8 @@ import Footer from './Components/Footer/footer.jsx'
 
 // Liens styles des composants pages (fichier scss)
 // import './Pages/Home/home.scss'
+import './Pages/Home/home.scss'
+import './Pages/Error404/error404.scss'
 
 // Liens styles des composants standard (fichier scss)
 import './Components/Header/header.scss'
