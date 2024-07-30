@@ -1,5 +1,7 @@
 import Logo from '../../Assets/Logo/LOGO-white.png'
 
+import '../../Components/Footer/footer.scss'
+
 function Footer() {
   return (
     <div className="footer-container">

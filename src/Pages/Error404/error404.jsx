@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 
+import '../../Pages/Error404/error404.scss'
+
 function Error() {
   return (
     <div className="error404-container main-container">

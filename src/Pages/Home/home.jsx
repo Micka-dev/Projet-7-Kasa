@@ -5,6 +5,8 @@ import Card from '../../Components/Card/card'
 
 import bannerImageHome from '../../Assets/Banner-img/bannerImageHome.jpg'
 
+import '../../Pages/Home/home.scss'
+
 import '../../Components/Card/card.scss'
 
 function Home() {
@@ -14,12 +16,7 @@ function Home() {
 
       <div className="housings-container main-container">
         {Housings.map((housing) => (
-          <Card
-            key={housing.id}
-            link={`/housing/${housing.id}`}
-            title={housing.title}
-            cover={housing.cover}
-          />
+          <Card key={housing.id} housing={housing} />
         ))}
       </div>
     </div>

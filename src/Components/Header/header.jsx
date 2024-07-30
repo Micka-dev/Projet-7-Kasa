@@ -1,5 +1,6 @@
 import { Link, NavLink } from 'react-router-dom'
 import Logo from '../../Assets/Logo/LOGO.svg'
+import '../../Components/Header/header.scss'
 
 function Header() {
   return (
@@ -23,7 +24,6 @@ function Header() {
         >
           A Propos
         </NavLink>
-        {/* <Link to="/housing/bookingId">Fiche logement</Link> */}
       </nav>
     </div>
   )

@@ -1,3 +1,5 @@
+import '../../Components/Banner/banner.scss'
+
 function Banner({ source, title }) {
   return (
     <div className="banner-container main-container">
@@ -6,7 +8,7 @@ function Banner({ source, title }) {
         src={source}
         alt="Image de la bannière"
       />
-      <p className="banner-container_title">{title}</p>
+      {title ? <p className="banner-container_title">{title}</p> : null}
     </div>
   )
 }
