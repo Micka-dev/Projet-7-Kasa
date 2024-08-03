@@ -8,10 +8,10 @@ import dataAbout from '../../Datas/dataAbout.json'
 
 function About() {
   return (
-    <div className="about-container">
+    <div className="about-container main-container">
       <Banner source={bannerImageAbout} />
       {dataAbout.map((data) => (
-        <Collapse key={data.id} data={data} />
+        <Collapse key={data.id} title={data.title} content={data.content} />
       ))}
     </div>
   )

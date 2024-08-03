@@ -8,4 +8,11 @@
     gap: 35px;
     margin-bottom: 35px;
   }
+
+  .shrink-container {
+    @media (min-width: 768px) {
+      width: 85%;
+      margin: auto;
+    }
+  }
 }
