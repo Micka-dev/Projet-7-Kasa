@@ -11,10 +11,10 @@ import '../../Components/Card/card.scss'
 
 function Home() {
   return (
-    <div>
+    <div className="home-container main-container">
       <Banner title="Chez vous, partout et ailleurs" source={bannerImageHome} />
 
-      <div className="housings-container main-container">
+      <div className="housings-container">
         {Housings.map((housing) => (
           <Card key={housing.id} housing={housing} />
         ))}

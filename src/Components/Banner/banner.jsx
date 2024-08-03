@@ -2,7 +2,7 @@ import '../../Components/Banner/banner.scss'
 
 function Banner({ source, title }) {
   return (
-    <div className="banner-container main-container">
+    <div className="banner-container">
       <img
         className="banner-container_img"
         src={source}
