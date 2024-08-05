@@ -6,12 +6,6 @@ import ArrowLeft from '../../Assets/Arrow/ArrowLeft.svg'
 function Gallery({ pictures }) {
   const [currentPicture, setCurrentPicture] = useState(0)
 
-  const slideShow = (index) => {
-    if (currentPicture === index) {
-      return true
-    }
-  }
-
   const nextSlide = () => {
     setCurrentPicture((currentPicture + 1) % pictures.length)
   }
@@ -30,12 +24,12 @@ function Gallery({ pictures }) {
       <div className="housing-carousel main-container">
         <div className="housing-carousel_image-container">
           {pictures.map((picture, index) =>
-            slideShow(index) ? (
+            currentPicture === index ? (
               <img
                 key={picture}
                 src={picture}
-                alt="housing picture"
-                className="housing-carousel_slide"
+                alt=""
+                className={'housing-carousel_slide'}
               />
             ) : null
           )}
