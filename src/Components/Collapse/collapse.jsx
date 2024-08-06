@@ -2,48 +2,51 @@ import { useState, useRef } from 'react'
 import '../../Components/Collapse/collapse.scss'
 
 function Collapse({ title, content }) {
-  const [OpeningState, setOpeningState] = useState(true)
-
-  const [icon, setIcon] = useState(
-    'container-collapses_collapse_icon fa-solid fa-chevron-up'
-  )
-
-  const [dropUp, setDropUp] = useState('displayInitial')
-
-  const target = useRef(null)
+  const [OpeningState, setOpeningState] = useState(false)
 
   const toggleOpeningState = () => {
     setOpeningState(!OpeningState)
-
-    setIcon(
-      OpeningState
-        ? 'anticlockwiseRotationIcon container-collapses_collapse_icon fa-solid fa-chevron-up'
-        : 'clockwiseRotationIcon container-collapses_collapse_icon fa-solid fa-chevron-up'
-    )
-
-    setDropUp(
-      OpeningState
-        ? ' dropDown container-collapses_content'
-        : 'dropUp  container-collapses_content'
-    )
-
-    const displayNoneDelay = setTimeout(() => {
-      !OpeningState ? target.current.classList.add('displayInitial') : null
-    }, 200)
-    return () => {
-      clearTimeout(displayNoneDelay)
-    }
   }
 
   return (
     <div className="container-collapses shrink-container">
-      <div className="container-collapses_collapse ">
+      <div
+        className="container-collapses_collapse "
+        onClick={toggleOpeningState}
+      >
         <h2 className="container-collapses_collapse_title">{title}</h2>
-        <i className={icon} onClick={toggleOpeningState}></i>
+
+        {OpeningState ? (
+          <i className="container-collapses_collapse_icon fa-solid fa-chevron-up anticlockwiseRotationChevron"></i>
+        ) : (
+          <i className="container-collapses_collapse_icon fa-solid fa-chevron-up "></i>
+        )}
       </div>
-      <p ref={target} className={dropUp}>
-        {content}
-      </p>
+      {/* méthode 1: Animation du texte en "drop down" et "drop up" avec des transitions et sans utiliser de "setTimeout" et avec un seul "useState" ; cependant pas de suppresion du "content" dans le html car sinon annule l'animation du "drop up", je n'ai rien trouvé dans l'ensemble de mes recherches permettant de le faire hormis le "setTimeout" permettant de retarder l'éxécution du code*/}
+
+      {OpeningState ? (
+        <div className="wrapDown ">
+          <p className="container-collapses_content dropDown ">{content}</p>
+        </div>
+      ) : (
+        <div className=" wrapUp">
+          <p className="container-collapses_content ">{content}</p>
+        </div>
+      )}
+
+      {/* Méthode 2 : Animation du texte en "drop down" avec une animation keyframes mais pas d'animation possible en "drop up" car suppresion du "content", seul moyen trouvé dans mes recherches serait d'utiliser un "setTimeout" pour retarder l'exécution du code mais tu m'as dit que ce nétait pas une bonne pratique ; (de plus d'après mes recherches il n'est pas possible d'animer un "display: none" en CSS) */}
+
+      {/* {OpeningState ? (
+        <p className="container-collapses_content dropAnimationDown ">
+          {content}
+        </p>
+      ) : null} */}
+
+      {/* Méthode 3 : Animation des chevrons uniquement le "content" apparait et disparait brusquement car suppression du content dans le html */}
+
+      {/* {OpeningState ? (
+        <p className="container-collapses_content dropDown ">{content}</p>
+      ) : null} */}
     </div>
   )
 }
