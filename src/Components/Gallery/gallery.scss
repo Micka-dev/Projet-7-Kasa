@@ -20,7 +20,6 @@
     border-radius: 10px;
     position: absolute;
     inset: 0;
-    opacity: 1;
     animation: slideTransition 0.2s ease-in-out;
 
     @media (min-width: 768px) {
@@ -29,17 +28,18 @@
   }
 
   @keyframes slideTransition {
-    0% {
+    from {
       opacity: 0;
       scale: 0.9;
     }
-    100% {
+    to {
       opacity: 1;
       scale: 1;
     }
   }
 
   .slideCounter {
+    color: transparent;
     @media (min-width: 768px) {
       color: #fff;
       font-size: 24px;
