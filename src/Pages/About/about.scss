@@ -15,4 +15,12 @@
       margin: auto;
     }
   }
+
+  .container-collapses_collapse {
+    &_title {
+      @media (min-width: 768px) {
+        font-size: 24px;
+      }
+    }
+  }
 }
