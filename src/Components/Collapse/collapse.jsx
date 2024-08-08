@@ -1,9 +1,15 @@
+// Import React
 import { useState } from 'react'
+// Import SCSS du composant
 import '../../Components/Collapse/collapse.scss'
 
+// Composant qui permet d'afficher les collapses et son contenu en fonction de l'état d'ouverture de la collapse
+
 function Collapse({ title, content }) {
+  // Création d'un hook d'état reflétant l'état d'ouverture de la collapse et sa mise en jour en fonction du clic sur la collapse
   const [OpeningState, setOpeningState] = useState(false)
 
+  // Permet de basculer entre une collapse ouverte et fermée
   const toggleOpeningState = () => {
     setOpeningState(!OpeningState)
   }
@@ -12,18 +18,20 @@ function Collapse({ title, content }) {
     <div className="container-collapses shrink-container">
       <div
         className="container-collapses_collapse "
+        // Détection du clic sur la collapse et appelle "toggleOpeningState"
         onClick={toggleOpeningState}
       >
         <h2 className="container-collapses_collapse_title">{title}</h2>
 
+        {/* Condition qui gère l'animation de rotation du chevron en fonction du clic sur la collapse */}
         {OpeningState ? (
           <i className="container-collapses_collapse_icon fa-solid fa-chevron-up anticlockwiseRotationChevron"></i>
         ) : (
           <i className="container-collapses_collapse_icon fa-solid fa-chevron-up"></i>
         )}
       </div>
-      {/* méthode 1: Animation du texte en "drop down" et "drop up" avec des transitions et sans utiliser de "setTimeout" et avec un seul "useState" ; cependant pas de suppresion du "content" dans le html car sinon annule l'animation du "drop up", je joue avec "height" ou encore passer par une librairy => non autorisé, je n'ai rien trouvé dans l'ensemble de mes recherches permettant de le faire hormis le "setTimeout" permettant de retarder l'exécution du code*/}
 
+      {/* Condition qui gère l'animation de translation du contenu vers le bas ou le haut en fonction de l'état d'ouverture de la collapse */}
       {OpeningState ? (
         <div className="wrapDown">
           <p className="container-collapses_content dropDown">{content}</p>
@@ -33,20 +41,6 @@ function Collapse({ title, content }) {
           <p className="container-collapses_content">{content}</p>
         </div>
       )}
-
-      {/* Méthode 2 : Animation du texte en "drop down" avec une animation keyframes mais pas d'animation possible en "drop up" car suppresion du "content", seul moyen trouvé dans mes recherches serait d'utiliser un "setTimeout" pour retarder l'exécution du code mais tu m'as dit que ce nétait pas une bonne pratique ; (de plus d'après mes recherches il n'est pas possible d'animer un "display: none" en CSS) */}
-
-      {/* {OpeningState ? (
-        <p className="container-collapses_content dropAnimationDown ">
-          {content}
-        </p>
-      ) : null} */}
-
-      {/* Méthode 3 : Animation des chevrons uniquement le "content" apparait et disparait brusquement car suppression du content dans le html */}
-
-      {/* {OpeningState ? (
-        <p className="container-collapses_content dropDown ">{content}</p>
-      ) : null} */}
     </div>
   )
 }

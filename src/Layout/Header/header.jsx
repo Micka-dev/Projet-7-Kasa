@@ -1,6 +1,11 @@
+// Import React
 import { NavLink } from 'react-router-dom'
+// Import du logo
 import Logo from '../../Assets/Logo/LOGO.svg'
+// Import du SCSS du composant
 import './header.scss'
+
+// Composant qui permet l'affichage du Header et de ses liens de navigation
 
 function Header() {
   return (
@@ -9,6 +14,8 @@ function Header() {
 
       <nav className="header-container_nav">
         <NavLink
+          // Permet la navigation vers la route définie
+          // Condition qui permet d'activer ou non le style d'un lien sélectionné
           className={({ isActive }) =>
             isActive ? 'header-container_link-activated' : null
           }

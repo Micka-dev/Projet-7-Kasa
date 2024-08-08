@@ -1,17 +1,18 @@
-// Liens React et React-Router
+// Import React et React-Router
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-// Liens composants pages (fichiers jsx)
+// Import composants pages (fichiers jsx)
 import Home from './Pages/Home/home.jsx'
 import About from './Pages/About/about.jsx'
 import Error404 from './Pages/Error404/error404.jsx'
 import Housing from './Pages/Housing/housing.jsx'
 
-// Liens composants standard (fichier jsx)
+// Import composants standards (fichier jsx)
 import Header from './Layout/Header/header.jsx'
 import Footer from './Layout/Footer/footer.jsx'
 
+// Le Router permet de gérer les différentes routes, chaque route permet d’afficher des composants de manière conditionnelle si le path de l’URL correspond au path de la route.
 function Router() {
   return (
     <React.StrictMode>

@@ -1,6 +1,9 @@
+// Import React Router
 import { Link } from 'react-router-dom'
-
+// Import du SCSS de la page
 import '../../Pages/Error404/error404.scss'
+
+// Composant qui permet l'affichage de la page erreur
 
 function Error() {
   return (

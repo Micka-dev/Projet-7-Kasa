@@ -1,7 +1,9 @@
+// Import du logo
 import Logo from '../../Assets/Logo/LOGO-white.png'
-
+// Import du SCSS du composant
 import './footer.scss'
 
+// Composant qui permet d'afficher le footer
 function Footer() {
   return (
     <div className="footer-container">
