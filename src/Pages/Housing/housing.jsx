@@ -9,18 +9,14 @@ import '../../Pages/Housing/housing.scss'
 function Housing() {
   //  si id includes dans le tableau json alors affichage fiche housing sinon renvoie a la page error404
   const listId = Housings.map((housing) => housing.id)
-  console.log(listId)
 
   const { housingId } = useParams()
-  console.log(housingId)
 
   if (!listId.includes(housingId)) {
     return <Error404 />
   }
 
   const housingSelected = Housings.find((housing) => housing.id === housingId)
-  console.log(housingSelected)
-  console.log(housingSelected.cover)
 
   return (
     <>

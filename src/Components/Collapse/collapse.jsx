@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import '../../Components/Collapse/collapse.scss'
 
 function Collapse({ title, content }) {
@@ -19,18 +19,18 @@ function Collapse({ title, content }) {
         {OpeningState ? (
           <i className="container-collapses_collapse_icon fa-solid fa-chevron-up anticlockwiseRotationChevron"></i>
         ) : (
-          <i className="container-collapses_collapse_icon fa-solid fa-chevron-up "></i>
+          <i className="container-collapses_collapse_icon fa-solid fa-chevron-up"></i>
         )}
       </div>
-      {/* méthode 1: Animation du texte en "drop down" et "drop up" avec des transitions et sans utiliser de "setTimeout" et avec un seul "useState" ; cependant pas de suppresion du "content" dans le html car sinon annule l'animation du "drop up", je n'ai rien trouvé dans l'ensemble de mes recherches permettant de le faire hormis le "setTimeout" permettant de retarder l'éxécution du code*/}
+      {/* méthode 1: Animation du texte en "drop down" et "drop up" avec des transitions et sans utiliser de "setTimeout" et avec un seul "useState" ; cependant pas de suppresion du "content" dans le html car sinon annule l'animation du "drop up", je joue avec "height" ou encore passer par une librairy => non autorisé, je n'ai rien trouvé dans l'ensemble de mes recherches permettant de le faire hormis le "setTimeout" permettant de retarder l'exécution du code*/}
 
       {OpeningState ? (
-        <div className="wrapDown ">
-          <p className="container-collapses_content dropDown ">{content}</p>
+        <div className="wrapDown">
+          <p className="container-collapses_content dropDown">{content}</p>
         </div>
       ) : (
-        <div className=" wrapUp">
-          <p className="container-collapses_content ">{content}</p>
+        <div className="wrapUp">
+          <p className="container-collapses_content">{content}</p>
         </div>
       )}
 

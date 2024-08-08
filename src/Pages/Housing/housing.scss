@@ -25,12 +25,12 @@
       width: 47%;
     }
   }
-}
 
-.container-collapses_collapse {
-  &_title {
-    @media (min-width: 768px) {
-      font-size: 18px;
+  .container-collapses_collapse {
+    &_title {
+      @media (min-width: 768px) {
+        font-size: 18px;
+      }
     }
   }
 }

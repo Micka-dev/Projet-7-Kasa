@@ -9,8 +9,8 @@ import Error404 from './Pages/Error404/error404.jsx'
 import Housing from './Pages/Housing/housing.jsx'
 
 // Liens composants standard (fichier jsx)
-import Header from './Components/Header/header.jsx'
-import Footer from './Components/Footer/footer.jsx'
+import Header from './Layout/Header/header.jsx'
+import Footer from './Layout/Footer/footer.jsx'
 
 function Router() {
   return (
