@@ -3,7 +3,7 @@ import { useState } from 'react'
 // Import SCSS du composant
 import '../../Components/Collapse/collapse.scss'
 
-// Composant qui permet d'afficher les collapses et son contenu en fonction de l'état d'ouverture de la collapse
+// Composant qui permet d'afficher la collapse et son contenu en fonction de l'état d'ouverture de la collapse
 
 function Collapse({ title, content }) {
   // Création d'un hook d'état reflétant l'état d'ouverture de la collapse et sa mise en jour en fonction du clic sur la collapse
@@ -34,11 +34,20 @@ function Collapse({ title, content }) {
       {/* Condition qui gère l'animation de translation du contenu vers le bas ou le haut en fonction de l'état d'ouverture de la collapse */}
       {OpeningState ? (
         <div className="wrapDown">
-          <p className="container-collapses_content dropDown">{content}</p>
+          <p className="container-collapses_content dropDown">
+            {/* Condition qui transforme les données en liste si elles sont sous forme de tableau */}
+            {Array.isArray(content)
+              ? content.map((item) => <li key={item}>{item}</li>)
+              : content}
+          </p>
         </div>
       ) : (
         <div className="wrapUp">
-          <p className="container-collapses_content">{content}</p>
+          <p className="container-collapses_content">
+            {Array.isArray(content)
+              ? content.map((item) => <li key={item}>{item}</li>)
+              : content}
+          </p>
         </div>
       )}
     </div>

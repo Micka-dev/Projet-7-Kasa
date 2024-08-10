@@ -10,6 +10,8 @@ import dataAbout from '../../Datas/dataAbout.json'
 // Composant qui permet l'affichage de la page A propos
 
 function About() {
+  document.title = 'A Propos - Kasa'
+
   return (
     <div className="about-container main-container">
       <Banner source={bannerImageAbout} />

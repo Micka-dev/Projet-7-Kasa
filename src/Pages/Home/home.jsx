@@ -11,6 +11,8 @@ import '../../Pages/Home/home.scss'
 // Composant qui permet l'affichage dynamique de la page d'accueil en fonction des données passées
 
 function Home() {
+  document.title = 'Accueil - Kasa'
+
   return (
     <div className="home-container main-container">
       <Banner title="Chez vous, partout et ailleurs" source={bannerImageHome} />

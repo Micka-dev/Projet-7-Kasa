@@ -10,7 +10,7 @@ import Collapse from '../../Components/Collapse/collapse'
 // Import du SCSS de la page
 import '../../Pages/Housing/housing.scss'
 
-// Composant qui permet l'affichage de la fiche du logement sélectionné (caroussel, infos logement et propiétaire, description et équipement contenu dans des menus déroulants)
+// Composant qui permet l'affichage de la fiche du logement sélectionné (carrousel, infos sur le logement et le propriétaire, description et équipements contenus dans des menus déroulants)
 
 function Housing() {
   // Création d'une liste contenant l'ensemble des id des logements de la base de donnée
@@ -25,6 +25,8 @@ function Housing() {
 
   // Création d'une constante contenant uniquement les informations du logement sélectionné
   const housingSelected = Housings.find((housing) => housing.id === housingId)
+
+  document.title = `"${housingSelected.title} - Kasa"`
 
   return (
     <>
@@ -41,10 +43,7 @@ function Housing() {
           <div className="apartment_collapses-container_equipement">
             <Collapse
               title="Equipements"
-              // Je "mappe" sur les données qui sont sous forme de tableau et les transforment en liste
-              content={housingSelected.equipments.map((equipement) => (
-                <li key={equipement}>{equipement}</li>
-              ))}
+              content={housingSelected.equipments}
             />
           </div>
         </div>

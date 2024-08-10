@@ -2,13 +2,13 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-// Import composants pages (fichiers jsx)
+// Import composants de pages (fichiers jsx)
 import Home from './Pages/Home/home.jsx'
 import About from './Pages/About/about.jsx'
 import Error404 from './Pages/Error404/error404.jsx'
 import Housing from './Pages/Housing/housing.jsx'
 
-// Import composants standards (fichier jsx)
+// Import composants du layout (fichier jsx)
 import Header from './Layout/Header/header.jsx'
 import Footer from './Layout/Footer/footer.jsx'
 

@@ -6,10 +6,10 @@ import './gallery.scss'
 import ArrowRight from '../../Assets/Arrow/ArrowRight.svg'
 import ArrowLeft from '../../Assets/Arrow/ArrowLeft.svg'
 
-// Fonction qui permet l'affichage du carousel et sa navigation fonctionnelle
+// Fonction qui permet l'affichage du carrousel et sa navigation fonctionnelle
 
 function Gallery({ pictures }) {
-  // Création d'un hook d'état permettant d'identifier l'index de la slide courante et sa mise à jour en fonction de la navigation dans le caroussel
+  // Création d'un hook d'état permettant d'identifier l'index de la slide courante et sa mise à jour en fonction de la navigation dans le carrousel
   const [currentPicture, setCurrentPicture] = useState(0)
 
   // Permet de passer à la slide suivante tout en bouclant à l'infini
